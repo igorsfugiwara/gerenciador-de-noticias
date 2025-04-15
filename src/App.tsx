@@ -5,6 +5,7 @@ import Admin from './pages/Admin';
 import NewsDetails from './pages/NewsDetails';
 import { News } from './types/News';
 import { useEffect, useState } from 'react';
+import Footer from './components/Footer';
 
 export default function App() {
   const [newsList, setNewsList] = useState<News[]>([]);
@@ -29,13 +30,14 @@ export default function App() {
   return (
     <Router>
       <Header />
-      <main style={{ padding: '1rem' }}>
+      <main>
         <Routes>
           <Route path="/" element={<Feed newsList={newsList} />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/news/:id" element={<NewsDetails newsList={newsList} />} />
         </Routes>
       </main>
+      <Footer />
     </Router>
   );
 }

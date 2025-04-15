@@ -1,4 +1,3 @@
-import React from "react";
 import { News } from "../types/News";
 import "../styles/NewsCard.css";
 import { Link } from "react-router-dom";
@@ -41,27 +40,3 @@ export default function NewsCard({ news }: NewsCardProps) {
           </Link>
   );
 }
-
-
-
-
-<div className="shareIcons">
-<button
-  className="iconButton"
-  onClick={() => handleShare("Compartilhar")}
->
-  <i className="fa-solid fa-arrow-up-from-bracket"></i>
-</button>
-<button
-  className="iconButton"
-  onClick={() => handleShare("Comentar")}
->
-  <i className="fa-regular fa-comment"></i>
-</button>
-<button
-  className="iconButton"
-  onClick={() => handleShare("Salvar")}
->
-  <i className="fa-regular fa-bookmark"></i>
-</button>
-</div>

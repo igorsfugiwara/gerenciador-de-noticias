@@ -1,3 +1,25 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+
+header {
+  padding: 1rem 2em;
+    background-color: rgb(238, 238, 238);
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+footer {
+  margin-top: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #666;
+  color: #fff;
+  padding: 5em 0;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+}

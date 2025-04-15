@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { News } from "../types/News";
 import NewsFormModal from "../components/NewsFormModal";
+import "../styles/Admin.css";
+
 
 export default function Admin() {
     const [newsList, setNewsList] = useState<News[]>([]);
@@ -38,16 +40,15 @@ export default function Admin() {
 
     return (
         <div>
-        <h1>Gerenciamento de Notícias</h1>
-        <button onClick={handleCreate}>Adicionar Notícia</button>
+        <h1 className="title-feed">Gerenciamento de Notícias</h1>
+        <button className="add-button"  onClick={handleCreate}>Adicionar Notícia</button>
 
         {/* Tabela de Notícias */}
-        <table style={styles.table}>
+        <table className="table">
             <thead>
             <tr>
                 <th>Editoria</th>
                 <th>Título</th>
-                <th>Conteúdo</th>
                 <th>Data de Publicação</th>
                 <th>Ações</th>
             </tr>
@@ -56,9 +57,15 @@ export default function Admin() {
             {newsList.map((news) => (
                 <tr key={news.id}>
                 <td>{news.editoria}</td>
-                <td>{news.titulo}</td>
-                <td style={styles.contentCell}>{news.conteudo}</td>
-                <td>{news.data_hora_publicacao}</td>
+                <td className="admin-titulo">{news.titulo}</td>
+                <td>  {new Date(news.data_hora_publicacao).toLocaleString('pt-BR', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    hour12: false
+                })}</td>
                 <td>
                     <button onClick={() => handleEdit(news)}>Editar</button>
                 </td>
@@ -89,18 +96,3 @@ export default function Admin() {
         </div>
     );
 }
-
-const styles = {
-    table: {
-        width: "100%",
-        borderCollapse: "collapse",
-        marginTop: "20px",
-    },
-    contentCell: {
-        maxWidth: "300px", // Definindo largura máxima para conteúdo
-        whiteSpace: "nowrap",
-        overflow: "hidden",
-        textOverflow: "ellipsis", // Adiciona "..." quando o texto ultrapassa
-        padding: "10px",
-    },
-};

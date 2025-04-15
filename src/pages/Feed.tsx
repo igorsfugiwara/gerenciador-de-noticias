@@ -1,6 +1,6 @@
 import { News } from "../types/News";
 import NewsCard from "../components/NewsCard";
-
+import "../styles/Feed.css";
 type FeedProps = {
   newsList: News[];
 };
@@ -8,8 +8,8 @@ type FeedProps = {
 export default function Feed({ newsList }: FeedProps) {
   return (
     <div>
-      <h1>Feed de Notícias</h1>
-      <div style={styles.cardContainer}>
+      <h1 className="title-feed">Feed de Notícias</h1>
+      <div className="card-container">
         {newsList.map((news) => (
           <NewsCard key={news.id} news={news} />
         ))}
@@ -18,12 +18,4 @@ export default function Feed({ newsList }: FeedProps) {
   );
 }
 
-const styles = {
-  cardContainer: {
-    display: "flex",
-    gap: "16px",
-    padding: "20px",
-    flexWrap: "wrap",
-    justifyContent: "flex-start",
-  },
-};
+

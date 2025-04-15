@@ -25,10 +25,11 @@
     gap: 5px;
 }
 .editoria {
-    color: #0c35ce;
+    color: #2a51ff;
     text-transform: uppercase;
     font-size: 12px;
     font-weight: 700;
+    letter-spacing: 0.1em;
 }
 
 .titulo {
@@ -41,6 +42,8 @@
 .subtitulo {
     font-size: 14px;
     color: #666;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .shareIcons {
