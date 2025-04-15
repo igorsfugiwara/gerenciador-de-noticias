@@ -1,0 +1,33 @@
+.add-button{
+    margin: 2em;
+    padding: 1em;
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+    background: lightgreen;
+}
+
+.table {
+    margin: 20px auto;
+}
+
+thead {
+    background-color: #ccc !important;
+}
+tr {
+    border-bottom: 1px solid grey !important;
+    line-height: 24px !important;
+    text-align: center !important;
+} 
+tr:hover {
+    background-color: #eee;
+}
+.admin-titulo {
+    padding: 0.5em !important;
+}
+td button {
+    margin: 0.5em;
+    padding: .5em;
+    border-radius: 4px;
+    background-color: lightsalmon;
+}

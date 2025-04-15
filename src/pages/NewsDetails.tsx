@@ -22,7 +22,14 @@ export default function NewsDetails({ newsList }: NewsDetailsProps) {
         <h2 className="subtitulo">{noticia.subtitulo}</h2>
         <div className="credits">
           <p className="author"> Redação, O Estado de S.Paulo</p>
-          <p>{noticia.data_hora_publicacao}</p>
+          <p>{new Date(noticia.data_hora_publicacao).toLocaleString('pt-BR', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    hour12: false
+                })}</p>
         </div>
       </div>
       <img src={noticia.imagem} alt={noticia.titulo} />

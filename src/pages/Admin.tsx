@@ -58,7 +58,7 @@ export default function Admin() {
                 <tr key={news.id}>
                 <td>{news.editoria}</td>
                 <td className="admin-titulo">{news.titulo}</td>
-                <td>  {new Date(news.data_hora_publicacao).toLocaleString('pt-BR', {
+                <td>{new Date(news.data_hora_publicacao).toLocaleString('pt-BR', {
                     year: 'numeric',
                     month: 'long',
                     day: 'numeric',

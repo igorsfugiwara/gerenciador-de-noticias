@@ -1,0 +1,39 @@
+.header-news {
+    padding: 1em .4em;
+}
+.titulo-details {
+    padding: 10px 0;
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+}
+.text {
+    line-height: 22px;
+    color: #222;
+    display: flex;
+    flex-direction: column;
+    padding: .5em;
+}
+.credits {
+    padding-top: 1em;
+}
+
+figure {
+    display: flex !important;
+    flex-direction: column;
+    margin: 1em 0;
+}
+figcaption {
+    background-color: #DDD;
+    padding: .5em;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+p {
+    margin: .3em 0 !important;
+}
+
+img {
+    width: 100%;
+}
