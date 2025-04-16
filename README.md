@@ -1,54 +1,40 @@
-# React + TypeScript + Vite
+# 📰 Gerenciador de Notícias (Front-End)
+Este repositório contém a interface do usuário para o projeto de gerenciamento de notícias. Desenvolvido com React, TypeScript, Vite e Tailwind CSS, oferece uma experiência de usuário dinâmica e responsiva.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🚀 Tecnologias Utilizadas
+- React: Biblioteca JavaScript para construção de interfaces de usuário, permitindo o desenvolvimento de componentes reutilizáveis e eficientes.
+- TypeScript: Superset do JavaScript que adiciona tipagem estática, melhorando a manutenção e escalabilidade do código.
+- Vite: Ferramenta de build e bundler que proporciona recarga rápida e otimizada durante o desenvolvimento.
+- Axios: Cliente HTTP para realizar requisições à API do backend, facilitando a comunicação entre o front-end e o servidor.​
+React
 
-Currently, two official plugins are available:
+## 📦 Instalação
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Clone este repositório:
 
-## Expanding the ESLint configuration
+  ```bash
+    git clone https://github.com/igorsfugiwara/gerenciador-de-noticias.git
+    cd gerenciador-de-noticias
+  ```
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+2. Instale as dependências:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+  ```bash
+    npm install
+  ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+3. Inicie o servidor de desenvolvimento:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+  ```bash
+    npm run dev
+  ```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 🧩 Funcionalidades
+- Cadastro de notícias: Permite adicionar novas notícias ao sistema.
+- Edição de notícias: Facilita a atualização de informações de notícias existentes.
+- Exclusão de notícias: Oferece a possibilidade de remover notícias do sistema.
+- Listagem de notícias: Exibe as notícias cadastradas de forma organizada e filtrável.​
+
+## 🔗 Repositório Backend
+O backend deste projeto está disponível em: https://github.com/igorsfugiwara/gerenciador-noticias-backend.​
+
