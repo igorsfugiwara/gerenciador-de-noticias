@@ -36,5 +36,5 @@ React
 - Listagem de notícias: Exibe as notícias cadastradas de forma organizada e filtrável.​
 
 ## 🔗 Repositório Backend
-O backend deste projeto está disponível em: https://github.com/igorsfugiwara/gerenciador-noticias-backend.​
+O backend deste projeto está disponível em: https://github.com/igorsfugiwara/gerenciador-noticias-backend .​
 
