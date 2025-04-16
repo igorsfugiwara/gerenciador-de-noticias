@@ -1,4 +1,5 @@
 export interface News {
+    _id: string;
     id: number;
     editoria: string;
     url: string;

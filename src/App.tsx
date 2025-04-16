@@ -13,7 +13,7 @@ export default function App() {
   useEffect(() => {
     const loadNews = async () => {
       try {
-        const response = await fetch("/noticias.json");
+        const response = await fetch("http://localhost:5000/noticias/ ");
 
         if (!response.ok) throw new Error("Falha ao carregar o arquivo noticias.json");
 

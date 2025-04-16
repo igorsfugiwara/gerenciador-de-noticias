@@ -12,7 +12,7 @@ export default function Admin() {
     useEffect(() => {
         const loadNews = async () => {
         try {
-            const response = await fetch("/noticias.json");
+            const response = await fetch("http://localhost:5000/noticias/");
 
             if (!response.ok) {
             throw new Error("Falha ao carregar o arquivo noticias.json");
@@ -24,9 +24,19 @@ export default function Admin() {
             console.error("Erro ao carregar as notícias:", error);
         }
         };
-
+        fetchNews();
         loadNews();
     }, []);
+
+    const fetchNews = async () => {
+        try {
+          const response = await fetch("http://localhost:5000/noticias");
+          const data = await response.json();
+          setNewsList(data);
+        } catch (error) {
+          console.error("Erro ao buscar notícias:", error);
+        }
+      };
 
     const handleEdit = (news: News) => {
         setSelectedNews(news);
@@ -55,7 +65,7 @@ export default function Admin() {
             </thead>
             <tbody>
             {newsList.map((news) => (
-                <tr key={news.id}>
+                <tr key={news._id}>
                 <td>{news.editoria}</td>
                 <td className="admin-titulo">{news.titulo}</td>
                 <td>{new Date(news.data_hora_publicacao).toLocaleString('pt-BR', {
@@ -78,18 +88,9 @@ export default function Admin() {
         <NewsFormModal
             isOpen={isModalOpen}
             onClose={() => setModalOpen(false)}
-            onSave={(news) => {
-            setNewsList((prevNews) => {
-                if (selectedNews) {
-                // Atualiza a notícia existente
-                return prevNews.map((n) =>
-                    n.id === selectedNews.id ? { ...n, ...news } : n
-                );
-                }
-                // Adiciona nova notícia
-                return [...prevNews, news];
-            });
-            setModalOpen(false);
+            onSave={() => {
+                fetchNews();
+                setModalOpen(false);
             }}
             news={selectedNews}
         />

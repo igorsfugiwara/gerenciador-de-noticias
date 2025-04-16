@@ -36,7 +36,7 @@ export default function NewsFormModal({ isOpen, onClose, onSave, news }: NewsFor
             imagem: "",
             imagem_thumb: "",
             conteudo: "",
-        }); // Limpa o formulário se for adicionar uma nova notícia
+        });
         }
     }, [news]);
 
@@ -45,10 +45,59 @@ export default function NewsFormModal({ isOpen, onClose, onSave, news }: NewsFor
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
-    const handleSave = () => {
-        onSave(formData);
-        onClose();
+    const handleSave = async () => {
+        try {
+            const isEdit = !!formData._id;
+            const url = isEdit
+                ? `http://localhost:5000/noticias/${formData._id}`
+                : 'http://localhost:5000/noticias';
+        
+            const response = await fetch(url, {
+                method: isEdit ? 'PUT' : 'POST',
+                headers: {
+                'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+        
+            if (!response.ok) {
+                const contentType = response.headers.get('content-type');
+                const errorText = contentType?.includes('application/json')
+                ? (await response.json()).error
+                : await response.text(); // pega o HTML da resposta
+        
+                throw new Error(errorText || 'Erro ao salvar a notícia');
+            }
+        
+            const savedNews = await response.json();
+            onSave(savedNews);
+            onClose();
+        } catch (error) {
+        console.error('Erro ao salvar:', error);
+        alert(`Erro ao salvar a notícia: ${error.message}`);
+        }
     };
+
+    const handleDelete = async () => {
+        const confirmDelete = window.confirm('Tem certeza que deseja excluir esta notícia?');
+        if (!confirmDelete) return;
+        try {
+            const response = await fetch(`http://localhost:5000/noticias/${formData._id}`, {
+                method: 'DELETE',
+            });
+        
+            if (!response.ok) {
+                throw new Error('Erro ao excluir a notícia');
+            }
+        
+            onSave(null); // ou chama uma função onDelete se tiver
+            onClose();
+        } catch (error) {
+            console.error('Erro ao excluir:', error);
+            alert(`Erro ao excluir a notícia: ${error.message}`);
+        }
+    };
+
 
     if (!isOpen) return null;
 
@@ -77,7 +126,7 @@ export default function NewsFormModal({ isOpen, onClose, onSave, news }: NewsFor
                     value={formData.titulo}
                     onChange={handleChange}
                 />
-                <label>Sub-título</label>
+                <label>Subtítulo</label>
                 <input
                     name="subtitulo"
                     placeholder="Subtítulo"
@@ -116,6 +165,7 @@ export default function NewsFormModal({ isOpen, onClose, onSave, news }: NewsFor
 
                 <div className="buttons">
                 <button onClick={handleSave}>Salvar</button>
+                {formData._id && <button onClick={handleDelete}>Excluir</button>}
                 <button onClick={onClose}>Cancelar</button>
                 </div>
             </div>
