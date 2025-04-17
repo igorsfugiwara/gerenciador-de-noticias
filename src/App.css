@@ -10,41 +10,51 @@ footer {
 
 header {
   padding: 40px;
-  background-color: rgb(238, 238, 238);
-  font-size: 24px;
+  background-color: var(--color-white);
+  font-size: var(--font-size-4);
   flex-direction: column;
-  gap: 0.5em;
+  gap: var(--spacing-4);
 }
 
 header h1 {
-  font-size: 20px;
+  font-size: var(--font-size-3);
   letter-spacing: 3px;
 }
 
 header nav {
-  gap: 20px;
+  gap: var(--spacing-4);
 }
 
 header nav a {
   text-decoration: none;
   padding: 8px 16px;
   border: 1px solid grey;
-  border-radius: 8px;
+  border-radius: var(--radius-3);
   color: #000;
 }
 
 footer {
   margin-top: 3em;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: #666;
-  color: #fff;
+  color: var(--color-white);
   padding: 5em 0;
   width: 100%;
   position: relative;
   bottom: 0;
 }
+.social-icons {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+}
 
+.social-icons a i {
+  color: var(--color-white);
+}
+/* CK EDITOR */
 .ck-editor__main {
   max-height: 80px;
   overflow: auto;
@@ -54,4 +64,41 @@ footer {
   .ck-editor__main {
     max-height: 140px;
   }
+
+  .ck-editor__editable {
+    min-height: 100px;
+  }
+}
+
+/* tokens */
+:root {
+  --font-size-0: 12px;
+  --font-size-1: 14px;
+  --font-size-2: 18px;
+  --font-size-3: 20px;
+  --font-size-4: 24px;
+  --font-size-5: 42px;
+  --spacing-1: 5px;
+  --spacing-2: 10px;
+  --spacing-3: 16px;
+  --spacing-4: 20px;
+  --radius-1: 4px;
+  --radius-2: 6px;
+  --radius-3: 8px;
+  --color-text: #222;
+  --color-black: #000;
+  --color-white: #fff;
+  --color-off-white: #eee;
+  --color-lightgrey: #ccc;
+  --color-darkgrey: #666;
+  --color-dark-blue: #0c35ce;
+  --color-blue: #2a51ff;
+  --color-green: #176e17;
+  --color-yellow: #9e9e35;
+  --color-orange: #ffa07a;
+  --color-red: #a72020;
+
+  
+a72020
+
 }

@@ -7,7 +7,7 @@
 
 .titulo-details {
     padding: 10px 0;
-    font-size: 24px;
+    font-size: var(--font-size-4);
     font-family: 'Times New Roman', Times, serif;
     font-weight: 700;
 }
@@ -22,35 +22,35 @@
     padding: .5em;
     text-align: justify;
     line-height: 22px;
-    color: #222;
+    color: var(--color-text);
 }
 
 .indice-ranking {
     margin: 20px 10px;
-    gap: 10px;
+    gap: var(--spacing-2);
 }
 
 .text p a, .text p a b, .text ul li a, .indice-ranking a {
     text-decoration: none;
-    color: darkblue;
+    color: var(--color-dark-blue);
 }
 
 .text ul li {
     display: flex;
-    gap: 5px;
+    gap: var(--spacing-1);
 }
 
 .text ul li p:first-child {
-    font-size: 20px;
+    font-size: var(--font-size-3);
 }
 
 .indice-ranking a {
     display: flex;
-    gap: 5px;
+    gap: var(--spacing-1);
 }
 
 .image-ranking .pos {
-    font-size: 22px;
+    font-size: var(--font-size-4);
 }
 
 .credits {
@@ -67,7 +67,7 @@ figure {
 figcaption {
     background-color: #DDD !important; 
     padding: .5em !important;
-    font-size: 12px !important;
+    font-size: var(--font-size-0) !important;
     line-height: 13px !important;
     border-radius: 0 0 4px 4px !important;
 }
@@ -88,11 +88,11 @@ img {
     }
 
     .titulo-details {
-        font-size: 42px;
+        font-size: var(--font-size-5);
     }
 
     .subtitulo {
-        font-size: 24px;
+        font-size: var(--font-size-4);
     }
 
     .text {

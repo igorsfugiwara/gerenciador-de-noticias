@@ -2,14 +2,14 @@
     margin: 16px 0 0 32px;
     padding: 1em;
     border: none;
-    border-radius: 8px;
-    font-size: 20px;
+    border-radius: var(--radius-3);
+    font-size: var(--font-size-3);
     background: rgb(142, 236, 142);
 }
 
 .add-button:hover {
     background: rgb(112, 187, 112);
-    color: #fff;
+    color: var(--color-white);
     
 }
 
@@ -19,7 +19,7 @@
 }
 
 thead {
-    background-color: #ccc !important;
+    background-color: var(--color-light-grey)!important;
 }
 
 thead th {
@@ -33,7 +33,7 @@ tr {
 } 
 
 tr:hover {
-    background-color: #eee;
+    background-color: var(--color-off-white);
 }
 
 .admin-titulo {
@@ -44,6 +44,6 @@ td button {
     border: none;
     margin: 5px;
     padding: 5px 10px;
-    border-radius: 4px;
-    background-color: lightsalmon;
+    border-radius: var(--radius-1);
+    background-color: var(--color-orange);
 }
