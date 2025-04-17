@@ -1,0 +1,49 @@
+.add-button{
+    margin: 16px 0 0 32px;
+    padding: 1em;
+    border: none;
+    border-radius: var(--radius-3);
+    font-size: var(--font-size-3);
+    background: rgb(142, 236, 142);
+}
+
+.add-button:hover {
+    background: rgb(112, 187, 112);
+    color: var(--color-white);
+    
+}
+
+.table {
+    margin: 20px auto;
+    width:98%;
+}
+
+thead {
+    background-color: var(--color-light-grey)!important;
+}
+
+thead th {
+    vertical-align: middle;
+}
+
+tr {
+    border-bottom: 1px solid grey !important;
+    line-height: 24px !important;
+    text-align: center !important;
+} 
+
+tr:hover {
+    background-color: var(--color-off-white);
+}
+
+.admin-titulo {
+    padding: 0.5em !important;
+}
+
+td button {
+    border: none;
+    margin: 5px;
+    padding: 5px 10px;
+    border-radius: var(--radius-1);
+    background-color: var(--color-orange);
+}
