@@ -10,7 +10,7 @@ footer {
 
 header {
   padding: 40px;
-  background-color: var(--color-white);
+  background-color: var(--color-off-white);
   font-size: var(--font-size-4);
   flex-direction: column;
   gap: var(--spacing-4);
@@ -85,12 +85,12 @@ footer {
   --radius-1: 4px;
   --radius-2: 6px;
   --radius-3: 8px;
-  --color-text: #222;
+  --color-text: #111;
   --color-black: #000;
   --color-white: #fff;
   --color-off-white: #eee;
-  --color-lightgrey: #ccc;
-  --color-darkgrey: #666;
+  --color-light-grey: #ccc;
+  --color-dark-grey: #666;
   --color-dark-blue: #0c35ce;
   --color-blue: #2a51ff;
   --color-green: #176e17;
