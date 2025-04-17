@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Feed from './pages/Feed';
-import Admin from './pages/Admin';
-import NewsDetails from './pages/NewsDetails';
+import Header from './components/Header/Header';
+import Feed from './pages/Feed/Feed';
+import Admin from './pages/Admin/Admin';
+import NewsPage from './pages/NewsPage/NewsPage';
 import { News } from './types/News';
 import { useEffect, useState } from 'react';
-import Footer from './components/Footer';
+import Footer from './components/Footer/Footer';
 
 export default function App() {
   const [newsList, setNewsList] = useState<News[]>([]);
@@ -34,7 +34,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Feed newsList={newsList} />} />
           <Route path="/admin" element={<Admin />} />
-          <Route path="/news/:id" element={<NewsDetails newsList={newsList} />} />
+          <Route path="/news/:id" element={<NewsPage newsList={newsList} />} />
         </Routes>
       </main>
       <Footer />
