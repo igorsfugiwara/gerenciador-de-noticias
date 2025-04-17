@@ -1,3 +1,7 @@
+.overlay, .modal, .buttons, .bloco, .bloco-interno {
+    display: flex;
+}
+
 .overlay {
     position: fixed;
     top: 0;
@@ -5,30 +9,76 @@
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1;
 }
 
 .modal {
-    background-color: white;
+    width: 90%;
+    height: 80%;
     padding: 2rem;
-    border-radius: 8px;
-    width: 800px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: flex;
     flex-direction: column;
     gap: 0.2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
     line-height: 24px;
+    overflow: auto;
+}
+
+.modal h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
 }
 
 .buttons {
-    display: flex;
     justify-content: space-between;
     margin-top: 1rem;
 }
 
+.buttons button {
+    padding: 8px 16px;
+    border: 1px solid grey;
+    border-radius: 6px;
+    font-size: 18px;
+}
+
+.delete-button:hover, .save-button:hover, .cancel-button:hover {
+    color: #fff;
+    transition: all .3s easy;
+}
+
+.delete-button:hover {
+    background: rgb(167, 32, 32);
+    font-weight: 700;
+}
+
+.save-button:hover {
+    background:rgb(23, 110, 23);
+    font-weight: 700;
+}
+
+.cancel-button:hover {
+    background:rgb(158, 158, 53);
+    font-weight: 700;
+}
+
+.bloco {
+    justify-content: space-between;
+}
+
+.bloco-interno {
+    width: 47%;
+    flex-direction: column;
+}
 .text-area {
     height: 200px;
+}
+
+
+@media (min-width: 560px) {
+    .modal {
+        max-width: 800px;
+    }
 }

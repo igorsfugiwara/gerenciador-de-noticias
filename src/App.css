@@ -2,18 +2,39 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+header,
+header nav,
+footer {
+  display: flex;
+}
+
 header {
-  padding: 1rem 2em;
-    background-color: rgb(238, 238, 238);
-    font-size: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
+  padding: 40px;
+  background-color: rgb(238, 238, 238);
+  font-size: 24px;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+header h1 {
+  font-size: 20px;
+  letter-spacing: 3px;
+}
+
+header nav {
+  gap: 20px;
+}
+
+header nav a {
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid grey;
+  border-radius: 8px;
+  color: #000;
 }
 
 footer {
   margin-top: 3em;
-  display: flex;
   align-items: center;
   justify-content: center;
   background-color: #666;
@@ -22,4 +43,15 @@ footer {
   width: 100%;
   position: relative;
   bottom: 0;
+}
+
+.ck-editor__main {
+  max-height: 80px;
+  overflow: auto;
+}
+
+@media (min-width: 560px) {
+  .ck-editor__main {
+    max-height: 140px;
+  }
 }

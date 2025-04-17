@@ -1,33 +1,49 @@
 .add-button{
-    margin: 2em;
+    margin: 16px 0 0 32px;
     padding: 1em;
     border: none;
     border-radius: 8px;
     font-size: 20px;
-    background: lightgreen;
+    background: rgb(142, 236, 142);
+}
+
+.add-button:hover {
+    background: rgb(112, 187, 112);
+    color: #fff;
+    
 }
 
 .table {
     margin: 20px auto;
+    width:98%;
 }
 
 thead {
     background-color: #ccc !important;
 }
+
+thead th {
+    vertical-align: middle;
+}
+
 tr {
     border-bottom: 1px solid grey !important;
     line-height: 24px !important;
     text-align: center !important;
 } 
+
 tr:hover {
     background-color: #eee;
 }
+
 .admin-titulo {
     padding: 0.5em !important;
 }
+
 td button {
-    margin: 0.5em;
-    padding: .5em;
+    border: none;
+    margin: 5px;
+    padding: 5px 10px;
     border-radius: 4px;
     background-color: lightsalmon;
 }

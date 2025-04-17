@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { News } from "../types/News";
 import "../styles/NewsFormModal.css";
+import { CKEditor } from "@ckeditor/ckeditor5-react";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 type NewsFormModalProps = {
     isOpen: boolean;
@@ -37,12 +39,26 @@ export default function NewsFormModal({ isOpen, onClose, onSave, news }: NewsFor
             imagem_thumb: "",
             conteudo: "",
         });
-        }
-    }, [news]);
+    }
+}, [news]);
+
+    function formatForInput(dateStr: string) {
+        if (!dateStr) return "";
+        const [date, time] = dateStr.split(" ");
+        return `${date}T${time}`;
+    }
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
-        setFormData((prev) => ({ ...prev, [name]: value }));
+    
+        let newValue = value;
+    
+        // Se for o campo de data, transforma o T em espaço
+        if (name === "data_hora_publicacao") {
+        newValue = value.replace("T", " ");
+        }
+    
+        setFormData((prev) => ({ ...prev, [name]: newValue }));
     };
 
     const handleSave = async () => {
@@ -105,13 +121,26 @@ export default function NewsFormModal({ isOpen, onClose, onSave, news }: NewsFor
         <div className="overlay">
             <div className="modal">
                 <h2>{news ? "Editar Notícia" : "Nova Notícia"}</h2>
-                <label>Editoria</label>
-                <input
-                    name="editoria"
-                    placeholder="Editoria"
-                    value={formData.editoria}
-                    onChange={handleChange}
-                />
+                <div className="bloco">
+                    <div className="bloco-interno">
+                        <label>Editoria</label>
+                        <input
+                            name="editoria"
+                            placeholder="Editoria"
+                            value={formData.editoria}
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className="bloco-interno">
+                        <label>Data da Publicação</label>
+                        <input
+                            type="datetime-local"
+                            name="data_hora_publicacao"
+                            value={formatForInput(formData.data_hora_publicacao)}
+                            onChange={handleChange}
+                        />
+                    </div>
+                </div>
                 <label>URL</label>
                 <input
                     name="url"
@@ -133,13 +162,6 @@ export default function NewsFormModal({ isOpen, onClose, onSave, news }: NewsFor
                     value={formData.subtitulo}
                     onChange={handleChange}
                 />
-                <label>Data da Publicação</label>
-                <input
-                    name="data_hora_publicacao"
-                    placeholder="Data e Hora (ex: 2025-04-11 16:44:00)"
-                    value={formData.data_hora_publicacao}
-                    onChange={handleChange}
-                />
                 <label>Imagem</label>
                 <input
                     name="imagem"
@@ -155,18 +177,19 @@ export default function NewsFormModal({ isOpen, onClose, onSave, news }: NewsFor
                     onChange={handleChange}
                 />
                 <label>Notícia</label>
-                <textarea
-                    className="text-area"
-                    name="conteudo"
-                    placeholder="Conteúdo HTML"
-                    value={formData.conteudo}
-                    onChange={handleChange}
-                />
+                <CKEditor
+  editor={ClassicEditor}
+  data={formData.conteudo}
+  onChange={(_, editor) => {
+    const data = editor.getData();
+    setFormData((prev) => ({ ...prev, conteudo: data }));
+  }}
+/>
 
                 <div className="buttons">
-                <button onClick={handleSave}>Salvar</button>
-                {formData._id && <button onClick={handleDelete}>Excluir</button>}
-                <button onClick={onClose}>Cancelar</button>
+                <button className="cancel-button" onClick={onClose}>Cancelar</button>
+                {formData._id && <button className="delete-button" onClick={handleDelete}>Excluir</button>}
+                <button className="save-button" onClick={handleSave}>Salvar</button>
                 </div>
             </div>
         </div>

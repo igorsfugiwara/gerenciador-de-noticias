@@ -1,13 +1,18 @@
+.card, .content-wrapper, .content, .shareIcons {
+    display: flex;
+}
+
+.card, .content-wrapper, .content {
+    flex-direction: column;
+}
+
 .card {
+    width: 250px;
+    min-height: 400px;
+    gap: 10px;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 250px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    justify-content: space-between;
-    height: 400px;
 }
 
 .thumbnail {
@@ -16,14 +21,18 @@
     object-fit: cover;
 }
 
+.content-wrapper {
+    min-height: 230px;
+    justify-content: space-between;
+}
+
 .content{
     padding: 10px;
     height: 100%;
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
     gap: 5px;
 }
+
 .editoria {
     color: #2a51ff;
     text-transform: uppercase;
@@ -37,9 +46,10 @@
     font-weight: 700;
     color: #000;
     font-family: 'Times New Roman', Times, serif;
+    margin: 10px 0;
 }
 
-.subtitulo {
+h3.subtitulo {
     font-size: 14px;
     color: #666;
     overflow: hidden;
@@ -47,7 +57,6 @@
 }
 
 .shareIcons {
-    display: flex;
     gap: 10px;
     justify-content: flex-end;
     border-top: 1px solid #ddd;
@@ -58,10 +67,11 @@
     border: none;
     background-color: transparent;
 }
+
 .iconButton i:hover {
-    color: #0c35ce; /* Cor azul quando o mouse passar por cima */
+    color: #0c35ce;
     cursor: pointer;
-  }
+}
 
 i {
     color: #9d9fa1;
