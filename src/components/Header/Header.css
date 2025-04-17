@@ -26,4 +26,11 @@ header nav a {
     border: 1px solid grey;
     border-radius: var(--radius-3);
     color: #000;
+    transition: all .4s easy-in-out;
+}
+
+header nav a:hover {
+    background-color: var(--color-dark-grey);
+    color: var(--color-white);
+    border-color: var(--color-white);
 }

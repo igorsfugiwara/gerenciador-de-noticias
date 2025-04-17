@@ -23,9 +23,8 @@
 }
 
 .content-wrapper {
-    min-height: 230px;
+    min-height: 252px;
     justify-content: space-between;
-    height: 100%;
 }
 
 .content{
