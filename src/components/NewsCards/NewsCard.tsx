@@ -22,19 +22,19 @@ export default function NewsCard({ news }: NewsCardProps) {
           <div className="shareIcons">
             <button
               className="iconButton"
-              onClick={() => handleShare("Compartilhar")}
+              // onClick={() => handleShare("Compartilhar")}
             >
               <i className="fa-solid fa-arrow-up-from-bracket"></i>
             </button>
             <button
               className="iconButton"
-              onClick={() => handleShare("Comentar")}
+              // onClick={() => handleShare("Comentar")}
             >
               <i className="fa-regular fa-comment"></i>
             </button>
             <button
               className="iconButton"
-              onClick={() => handleShare("Salvar")}
+              // onClick={() => handleShare("Salvar")}
             >
               <i className="fa-regular fa-bookmark"></i>
             </button>

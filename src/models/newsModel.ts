@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 
 const newsSchema = new mongoose.Schema({
+  _id: { type: Number, required: true, unique: true },
   id: { type: Number, required: true, unique: true },
   editoria: { type: String, required: true },
   url: { type: String, required: true },
