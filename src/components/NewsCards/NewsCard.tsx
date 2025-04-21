@@ -8,7 +8,7 @@ type NewsCardProps = {
 
 export default function NewsCard({ news }: NewsCardProps) {
   return (
-    <Link to={`/news/${news.id}`} className="noticia">
+    <Link to={`/news/${news.id}`} className="noticia" aria-label={news.titulo}>
       <div className="card">
         {news.imagem && (
           <img src={news.imagem} alt="thumbnail" className="thumbnail" />
@@ -22,19 +22,19 @@ export default function NewsCard({ news }: NewsCardProps) {
           <div className="shareIcons">
             <button
               className="iconButton"
-              // onClick={() => handleShare("Compartilhar")}
+              aria-label="Compartilhar notícia"
             >
               <i className="fa-solid fa-arrow-up-from-bracket"></i>
             </button>
             <button
               className="iconButton"
-              // onClick={() => handleShare("Comentar")}
+              aria-label="Comentários"
             >
               <i className="fa-regular fa-comment"></i>
             </button>
             <button
               className="iconButton"
-              // onClick={() => handleShare("Salvar")}
+              aria-label="Salvar notícia"
             >
               <i className="fa-regular fa-bookmark"></i>
             </button>

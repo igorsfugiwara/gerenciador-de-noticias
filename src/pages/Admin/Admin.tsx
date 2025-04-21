@@ -30,13 +30,14 @@ export default function Admin() {
 
     const fetchNews = async () => {
         try {
-          const response = await fetch("http://localhost:5000/noticias");
-          const data = await response.json();
-          setNewsList(data);
+            // Porta 5000,  Back-end
+            const response = await fetch("http://localhost:5000/noticias");
+            const data = await response.json();
+            setNewsList(data);
         } catch (error) {
-          console.error("Erro ao buscar notícias:", error);
+            console.error("Erro ao buscar notícias:", error);
         }
-      };
+    };
 
     const handleEdit = (news: News) => {
         setSelectedNews(news);
@@ -59,6 +60,7 @@ export default function Admin() {
             <tr>
                 <th>Editoria</th>
                 <th>Título</th>
+                <th>URL</th>
                 <th>Data de Publicação</th>
                 <th>Ações</th>
             </tr>
@@ -68,6 +70,7 @@ export default function Admin() {
                 <tr key={news._id}>
                 <td>{news.editoria}</td>
                 <td className="admin-titulo">{news.titulo}</td>
+                <td><a href={news.url} target="_blank">Link</a></td>
                 <td>{new Date(news.data_hora_publicacao).toLocaleString('pt-BR', {
                     year: 'numeric',
                     month: 'long',

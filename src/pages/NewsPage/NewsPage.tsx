@@ -14,7 +14,7 @@ export default function newsPage({ newsList }: newsPageProps) {
   if (!noticia) return <p>Notícia não encontrada</p>;
 
   return (
-    <div>
+    <div className="news-page">
       <div className="header-news">
         <span className="editoria">{noticia.editoria}</span>
         <h1 className="titulo-details">{noticia.titulo}</h1>
